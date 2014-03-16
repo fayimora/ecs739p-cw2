@@ -5,10 +5,26 @@
  */
 
 import org.apache.spark.SparkContext
+import scala.util.{Try, Success, Failure}
 import SparkContext._
 
-class PreProcessor {
+object PreProcessor {
   def main(args: Array[String]) {
+    val jars = SparkContext.jarOfObject(this)
+    val master = "local"
+    val sc = new SparkContext(master, "PreProcessorJob", null, jars)
 
+    val file = sc.textFile(args(0))
+    file.flatMap(line => tokenize(line)).saveAsTextFile(args(1))
+  }
+
+  private def tokenize(line: String): Array[String] = {
+    val tokens = line.split(":")
+    val node = tokens(0)
+    val neighbours = Try(tokens(1)) match {
+      case Failure(ex) => Array[String]("")
+      case Success(st) => tokens(1).split(",")
+    }
+    neighbours.map(n => node + " " + n)
   }
 }
