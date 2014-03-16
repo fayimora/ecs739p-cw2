@@ -23,7 +23,7 @@ object PreProcessor {
     val node = tokens(0)
     val neighbours = Try(tokens(1)) match {
       case Failure(ex) => Array[String]("")
-      case Success(st) => tokens(1).split(",")
+      case Success(st) => st.split(",")
     }
     neighbours.map(n => node + " " + n)
   }
