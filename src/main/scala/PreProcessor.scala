@@ -6,7 +6,6 @@
 
 import org.apache.spark.SparkContext
 import scala.util.{Try, Success, Failure}
-import SparkContext._
 
 object PreProcessor {
   def main(args: Array[String]) {
