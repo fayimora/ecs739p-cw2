@@ -10,5 +10,5 @@ libraryDependencies ++= Seq(
   "org.apache.spark" %% "spark-core" % "0.9.0-incubating"
 )
 
-initialCommands := "import com.fayi.hpc.coursework2._"
+// initialCommands := "import com.fayi.hpc.coursework2._"
 
