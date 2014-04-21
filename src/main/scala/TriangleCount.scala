@@ -19,7 +19,7 @@ object TriangleCount {
     val graph = GraphLoader.edgeListFile(sc, input, true).partitionBy(PartitionStrategy.RandomVertexCut)
     val triCounts = graph.triangleCount().vertices
 
-    printToFile("livejournal-triangles.txt")(p => cc.collect().foreach(p.println))
+    printToFile("livejournal-triangles.txt")(p => triCounts.collect().foreach(p.println))
   }
 
   def printToFile(filename: String)(op: PrintWriter => Unit) {
