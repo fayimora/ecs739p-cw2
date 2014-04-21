@@ -20,6 +20,7 @@ object TriangleCount {
     val triCounts = graph.triangleCount().vertices
 
     printToFile("livejournal-triangles.txt")(p => triCounts.collect().foreach(p.println))
+
   }
 
   def printToFile(filename: String)(op: PrintWriter => Unit) {
