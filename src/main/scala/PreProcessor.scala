@@ -10,6 +10,7 @@ import scala.util.{Try, Success, Failure}
 object PreProcessor {
   def main(args: Array[String]) {
     val jars = SparkContext.jarOfObject(this)
+    // val master = "spark://146.185.155.66:7077"
     val master = "local"
     val sc = new SparkContext(master, "PreProcessorJob", null, jars)
 
