@@ -16,5 +16,4 @@ libraryDependencies ++= Seq(
 resolvers += "Akka Repository" at "http://repo.akka.io/releases/"
 
 resolvers += "cloudera" at "https://repository.cloudera.com/artifactory/cloudera-repos/"
-// initialCommands := "import com.fayi.hpc.coursework2._"
 
