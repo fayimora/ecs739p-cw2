@@ -25,6 +25,7 @@ object ConnectedComponents {
     printToFile("livejournal-conected-components.txt")(p => cc.collect().foreach(p.println))
   }
 
+  /* Nice function to help wite multiple lines to file */
   def printToFile(filename: String)(op: PrintWriter => Unit) {
     val p = new PrintWriter(new File(filename))
     try{ op(p) } finally { p.close() }

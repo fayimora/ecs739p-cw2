@@ -23,6 +23,7 @@ object TriangleCount {
 
   }
 
+  /* Nice function to help wite multiple lines to file */
   def printToFile(filename: String)(op: PrintWriter => Unit) {
     val p = new PrintWriter(new File(filename))
     try{ op(p) } finally { p.close() }
