@@ -11,5 +11,13 @@ To run a job, open a terminal and load the sbt console, then run `runMain JobNam
 
 OR
 
-run `sbt "runMain JobName <input-file> <output-path>"` in your terminal.
+run `sbt "runMain JobName <input-file> <output-path>"` in your terminal. Input file might be
+optional depending on the program you are running.
 
+`ConectedComponents.scala`  contains code used for finding connected components in both datasets
+`Preprocessor.scala` contains code used to convert adjacency list to an edge list
+`TriangleCount.scala` contains code used to find the number of triangles each node contains.
+`WordCount.scala` is a word count program that was initially used to find the number of nodes in our graph
+
+All The above mentioned scripts run in Apache Spark. The input could also be in the local file
+system or HDFS. The output however is written to the local file system.
