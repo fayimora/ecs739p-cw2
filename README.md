@@ -25,6 +25,6 @@ system or HDFS. The output however is written to the local file system.
 `create_mappings.py` code that we used to attempt renaming nodes in the G+ dataset
 `sort.py` a utility to help sort output from triangles job
 
-The `resources` folder contains the output we used in our analysis
+The `resources` folder contains the output we used in our analysis.
 
 
